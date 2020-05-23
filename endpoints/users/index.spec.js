@@ -1,0 +1,24 @@
+const handlers = require('./index')
+
+describe('Endpoints', () => {
+    describe('users', () => {
+        describe('get', () => {
+            it("returns to user json", async() => {
+                let axios = {
+                    get: jest.fn().mockResolvedValue({ data: 1 }),
+                }
+                const res = {
+                    status: jest.fn().mockReturnThis(),
+                    send: jest.fn()
+                }
+                await handlers({ axios }).get({}, res)
+                expect(res.status.mock.calls).toEqual([
+                    [200]
+                ])
+                expect(rest.send.mock.calls).toEqual([
+                    [1]
+                ])
+            })
+        })
+    })
+})
