@@ -15,7 +15,7 @@ describe('Endpoints', () => {
                 expect(res.status.mock.calls).toEqual([
                     [200]
                 ])
-                expect(rest.send.mock.calls).toEqual([
+                expect(res.send.mock.calls).toEqual([
                     [1]
                 ])
             })
